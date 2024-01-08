@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+# Files to exclude
+node_modules/
+package-lock.json
+package.json
+cypress.config.js
