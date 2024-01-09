@@ -23,8 +23,15 @@ describe('template spec', () => {
     // Confirmation message
     cy.get("h2").should('have.text', 'Appointment Confirmation');
     cy.get('.lead').should('contain.text', 'Please be informed that your appointment has been booked as following:');
+    cy.get('#facility').should('contain.text', 'Seoul CURA Healthcare Center')
+    cy.get('#hospital_readmission').should('contain.text','Yes')
+    cy.get('#program').should('contain.text','None')
+    cy.get('#visit_date').should('contain.text','')
+    cy.get('#comment').should('contain.text', 'I would like my consulting doctor to be Dr. Lee Jun Hee')
+    cy.get('.text-center > .btn').click()
 
-    // Check the success message after booking
-    cy.contains('Please be informed that your appointment has been booked as following').should('exist');
+    // Log out
+    cy.get('#menu-toggle').click()
+    cy.get(':nth-child(6) > a').click()
   })
 })
